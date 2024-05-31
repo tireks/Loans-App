@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Leonov</string>
+    <string name="button_timer">GO!</string>
+    <string name="timerText_label">Please, tap the button</string>
 </resources>
