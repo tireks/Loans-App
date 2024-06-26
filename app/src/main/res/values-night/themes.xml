@@ -1,7 +1,87 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Leonov" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name = "android:windowBackground">@color/night_background_primary</item>
+        <item name = "android:colorBackground">@color/night_background_secondary</item>
+        <item name="android:unfocusedMonthDateColor">@color/night_background_disable</item>
+        <item name="android:colorBackgroundCacheHint">@color/night_background_invert</item>
+        <item name="android:textColorPrimary">@color/night_font_primary</item>
+        <item name="android:textColorSecondary">@color/night_font_secondary</item>
+        <item name="android:icon">@color/night_icon_primary</item>
+        <item name="android:colorButtonNormal">@color/night_permanent_primary</item>
+        <item name="android:colorFocusedHighlight">@color/night_indicator_error</item>
+        <item name="android:colorMultiSelectHighlight">@color/night_indicator_attention</item>
+        <item name="android:colorPressedHighlight">@color/night_indicator_positive</item>
+        <item name="android:titleTextColor">@color/night_permanent_primary_dark</item>
+    </style>
+
+    <style name="Theme.Leonov" parent="Base.Theme.Leonov" />
+
+    <style name="text_headline_1" parent="Base.Theme.Leonov" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="text_headline_2" parent="Base.Theme.Leonov">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="text_body" parent="Base.Theme.Leonov">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="image_toolbar_left" parent="Base.Theme.Leonov">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_marginTop">@dimen/normal_margin</item>
+        <item name="android:layout_marginStart">@dimen/normal_margin</item>
+    </style>
+
+    <style name="image_toolbar_right" parent="Base.Theme.Leonov">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_marginEnd">@dimen/normal_margin</item>
+    </style>
+
+    <style name="text_caption" parent="Base.Theme.Leonov">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="button_yellow" parent="Base.Theme.Leonov">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/bg_button_yellow</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="button_grey">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/bg_button_grey</item>
+        <item name="android:elevation">0dp</item>
     </style>
 </resources>
