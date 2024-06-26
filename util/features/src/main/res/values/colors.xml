@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="day_background_primary">#FFFFFF</color>
+    <color name="day_background_secondary">#F1F1F2</color>
+    <color name="day_background_tertiary">#9D9E9F</color>
+    <color name="day_background_disable">#E5E5E5</color>
+    <color name="day_background_invert">#272F3A</color>
+    <color name="day_font_primary">#3E3E3E</color>
+    <color name="day_font_secondary">#73787F</color>
+    <color name="day_font_disable">#A1A5AA</color>
+    <color name="day_font_invert">#FFFFFF</color>
+    <color name="day_permanent_primary">#FED200</color>
+    <color name="day_permanent_primary_light">#FFE982</color>
+    <color name="day_permanent_primary_dark">#F1CB16</color>
+    <color name="day_indicator_error">#E53E3E</color>
+    <color name="day_indicator_positive">#19B36D</color>
+    <color name="day_indicator_attention">#FE9800</color>
+    <color name="day_border_primary">#959698</color>
+    <color name="day_border_secondary">#E3E4E5</color>
+    <color name="day_icon_primary">#151E2A</color>
+    <color name="day_icon_secondary">#73787F</color>
+    <color name="day_icon_disable">#A1A5AA</color>
+    <color name="day_icon_invert">#FFFFFF</color>
+
+</resources>
