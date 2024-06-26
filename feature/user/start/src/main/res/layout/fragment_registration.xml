@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:windowBackground"
+    android:orientation="vertical"
+    android:theme="@style/Theme.Leonov.NoActionBar"
+    tools:context=".ui.bottomContainer.RegistrationFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        android:hint="@string/bottom_container_login_title"
+        app:boxStrokeColor="?android:panelColorBackground"
+        app:hintTextAppearance="@style/text_caption">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginEditText"
+            style="@style/text_body_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:hint="@string/bottom_container_password_title"
+        app:boxStrokeColor="?android:panelColorBackground"
+        app:endIconMode="password_toggle"
+        app:hintTextAppearance="@style/text_caption">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            style="@style/text_body_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:hint="@string/bottom_container_password_conf_title"
+        app:boxStrokeColor="?android:panelColorBackground"
+        app:endIconMode="password_toggle"
+        app:hintTextAppearance="@style/text_caption">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordConfirmEditText"
+            style="@style/text_body_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <android.widget.Button
+        android:id="@+id/registrationButton"
+        style="@style/button_yellow"
+        android:layout_marginHorizontal="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/huge_margin"
+        android:text="@string/bottom_container_button_title" />
+
+</LinearLayout>
