@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/globalContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground"
+    android:theme="@style/Theme.Leonov.NoActionBar"
+    tools:context=".menuTab.menuScreen.ui.MenuFragment">
+
+    <View
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbarSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/toolbarText"
+        style="@style/text_headline_2"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/menu_screen_toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbarView"
+        app:layout_constraintTop_toTopOf="@id/toolbarView" />
+
+    <ImageButton
+        android:id="@+id/toolbarQuestionButton"
+        style="@style/image_toolbar_right"
+        android:src="@drawable/ic_question_svg"
+        app:layout_constraintEnd_toEndOf="@id/toolbarView"
+        app:layout_constraintTop_toTopOf="@id/toolbarText" />
+
+    <Space
+        android:id="@+id/toolbarSpacer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_margin"
+        app:layout_constraintTop_toBottomOf="@id/toolbarText" />
+
+    <View
+        android:id="@+id/loansButtonView"
+        style="@style/menu_button_view"
+        android:layout_marginTop="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="@id/loansButtonSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarView" />
+
+    <TextView
+        android:id="@+id/loansButtonText"
+        style="@style/menu_button_text"
+        android:text="@string/menu_loans_button"
+        app:layout_constraintStart_toStartOf="@id/loansButtonView"
+        app:layout_constraintTop_toTopOf="@id/loansButtonView" />
+
+    <ImageButton
+        android:id="@+id/loansButtonPic"
+        style="@style/menu_button_pic"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/loansButtonView"
+        app:layout_constraintTop_toTopOf="@id/loansButtonText" />
+
+    <Space
+        android:id="@+id/loansButtonSpacer"
+        style="@style/menu_button_spacer"
+        app:layout_constraintEnd_toEndOf="@id/loansButtonView"
+        app:layout_constraintStart_toStartOf="@id/loansButtonView"
+        app:layout_constraintTop_toBottomOf="@id/loansButtonText" />
+
+    <View
+        android:id="@+id/offerButtonView"
+        style="@style/menu_button_view"
+        app:layout_constraintBottom_toBottomOf="@id/offerButtonSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loansButtonView" />
+
+    <TextView
+        android:id="@+id/offerButtonText"
+        style="@style/menu_button_text"
+        android:text="@string/menu_offers"
+        app:layout_constraintStart_toStartOf="@id/offerButtonView"
+        app:layout_constraintTop_toTopOf="@id/offerButtonView" />
+
+    <ImageButton
+        android:id="@+id/offerButtonPic"
+        style="@style/menu_button_pic"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/offerButtonView"
+        app:layout_constraintTop_toTopOf="@id/offerButtonText" />
+
+    <Space
+        android:id="@+id/offerButtonSpacer"
+        style="@style/menu_button_spacer"
+        app:layout_constraintEnd_toEndOf="@id/offerButtonView"
+        app:layout_constraintStart_toStartOf="@id/offerButtonView"
+        app:layout_constraintTop_toBottomOf="@id/offerButtonText" />
+
+    <View
+        android:id="@+id/branchesButtonView"
+        style="@style/menu_button_view"
+        app:layout_constraintBottom_toBottomOf="@id/branchesButtonSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/offerButtonView" />
+
+    <TextView
+        android:id="@+id/branchesButtonText"
+        style="@style/menu_button_text"
+        android:text="@string/menu_branches"
+        app:layout_constraintStart_toStartOf="@id/branchesButtonView"
+        app:layout_constraintTop_toTopOf="@id/branchesButtonView" />
+
+    <ImageButton
+        android:id="@+id/branchesButtonPic"
+        style="@style/menu_button_pic"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/branchesButtonView"
+        app:layout_constraintTop_toTopOf="@id/branchesButtonText" />
+
+    <Space
+        android:id="@+id/branchesButtonSpacer"
+        style="@style/menu_button_spacer"
+        app:layout_constraintEnd_toEndOf="@id/branchesButtonView"
+        app:layout_constraintStart_toStartOf="@id/branchesButtonView"
+        app:layout_constraintTop_toBottomOf="@id/branchesButtonText" />
+
+    <View
+        android:id="@+id/helpButtonView"
+        style="@style/menu_button_view"
+        app:layout_constraintBottom_toBottomOf="@id/helpButtonSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/branchesButtonView" />
+
+    <TextView
+        android:id="@+id/helpButtonText"
+        style="@style/menu_button_text"
+        android:text="@string/menu_help"
+        app:layout_constraintStart_toStartOf="@id/helpButtonView"
+        app:layout_constraintTop_toTopOf="@id/helpButtonView" />
+
+    <ImageButton
+        android:id="@+id/helpButtonPic"
+        style="@style/menu_button_pic"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/helpButtonView"
+        app:layout_constraintTop_toTopOf="@id/helpButtonText" />
+
+    <Space
+        android:id="@+id/helpButtonSpacer"
+        style="@style/menu_button_spacer"
+        app:layout_constraintEnd_toEndOf="@id/helpButtonView"
+        app:layout_constraintStart_toStartOf="@id/helpButtonView"
+        app:layout_constraintTop_toBottomOf="@id/helpButtonText" />
+
+    <View
+        android:id="@+id/languageButtonView"
+        style="@style/menu_button_view"
+        app:layout_constraintBottom_toBottomOf="@id/languageButtonSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helpButtonView" />
+
+    <TextView
+        android:id="@+id/languageButtonText"
+        style="@style/menu_button_text"
+        android:text="@string/menu_language"
+        app:layout_constraintStart_toStartOf="@id/languageButtonView"
+        app:layout_constraintTop_toTopOf="@id/languageButtonView" />
+
+    <ImageButton
+        android:id="@+id/languageButtonPic"
+        style="@style/menu_button_pic"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/languageButtonView"
+        app:layout_constraintTop_toTopOf="@id/languageButtonText" />
+
+    <Space
+        android:id="@+id/languageButtonSpacer"
+        style="@style/menu_button_spacer"
+        app:layout_constraintEnd_toEndOf="@id/languageButtonView"
+        app:layout_constraintStart_toStartOf="@id/languageButtonView"
+        app:layout_constraintTop_toBottomOf="@id/languageButtonText" />
+
+    <View
+        android:id="@+id/exitButtonView"
+        style="@style/menu_button_view"
+        app:layout_constraintBottom_toBottomOf="@id/exitButtonSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/languageButtonView" />
+
+    <TextView
+        android:id="@+id/exitButtonText"
+        style="@style/menu_button_text"
+        android:text="@string/menu_exit"
+        app:layout_constraintStart_toStartOf="@id/exitButtonView"
+        app:layout_constraintTop_toTopOf="@id/exitButtonView" />
+
+    <ImageButton
+        android:id="@+id/exitButtonPic"
+        style="@style/menu_button_pic"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/exitButtonView"
+        app:layout_constraintTop_toTopOf="@id/exitButtonText" />
+
+    <Space
+        android:id="@+id/exitButtonSpacer"
+        style="@style/menu_button_spacer"
+        app:layout_constraintEnd_toEndOf="@id/exitButtonView"
+        app:layout_constraintStart_toStartOf="@id/exitButtonView"
+        app:layout_constraintTop_toBottomOf="@id/exitButtonText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

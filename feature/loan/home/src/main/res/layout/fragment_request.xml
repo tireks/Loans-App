@@ -1,0 +1,140 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/globalContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Leonov.NoActionBar"
+    tools:context=".homeTab.requestScreen.ui.RequestFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:windowBackground">
+
+        <View
+            android:id="@+id/toolbarView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/toolbarSpacer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/toolbarBackButton"
+            style="@style/image_toolbar_left"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintStart_toStartOf="@id/toolbarView"
+            app:layout_constraintTop_toTopOf="@id/toolbarView" />
+
+
+        <TextView
+            android:id="@+id/toolbarText"
+            style="@style/text_headline_2"
+            android:layout_marginStart="@dimen/huge_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@string/request_screen_toolbar"
+            app:layout_constraintStart_toEndOf="@id/toolbarBackButton"
+            app:layout_constraintTop_toTopOf="@id/toolbarView" />
+
+        <Space
+            android:id="@+id/toolbarSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_margin"
+            app:layout_constraintTop_toBottomOf="@id/toolbarText" />
+
+        <TextView
+            android:id="@+id/requestTitle"
+            style="@style/text_body"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@string/request_screen_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameLayout"
+            style="@style/request_field_layout"
+            android:hint="Имя"
+            app:boxStrokeColor="?android:panelColorBackground"
+            app:hintTextAppearance="@style/text_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/requestTitle"
+            app:layout_constraintTop_toBottomOf="@id/requestTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditText"
+                style="@style/request_field_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/surnameLayout"
+            style="@style/request_field_layout"
+            android:hint="Фамилия"
+            app:boxStrokeColor="?android:panelColorBackground"
+            app:hintTextAppearance="@style/text_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/requestTitle"
+            app:layout_constraintTop_toBottomOf="@id/nameLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/surnameEditText"
+                style="@style/request_field_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneLayout"
+            style="@style/request_field_layout"
+            android:hint="Телефон"
+            app:boxStrokeColor="?android:panelColorBackground"
+            app:hintTextAppearance="@style/text_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/requestTitle"
+            app:layout_constraintTop_toBottomOf="@id/surnameLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneEditText"
+                style="@style/request_field_text"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/text_caption"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="@string/request_screen_hint"
+            app:layout_constraintEnd_toEndOf="@id/phoneLayout"
+            app:layout_constraintStart_toStartOf="@id/phoneLayout"
+            app:layout_constraintTop_toBottomOf="@id/phoneLayout" />
+
+        <android.widget.Button
+            android:id="@+id/requestButton"
+            style="@style/button_yellow"
+            android:layout_margin="@dimen/normal_margin"
+            android:text="@string/request_screen_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="26dp"
+        android:indeterminate="true"
+        android:indeterminateTint="?android:icon"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
