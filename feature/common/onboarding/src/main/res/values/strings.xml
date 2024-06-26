@@ -1,0 +1,12 @@
+<resources>
+    <string name="slide1_headline">Оформить займ</string>
+    <string name="slide1_body1">Выберите сумму и нажмите «продолжить». Затем укажите свои данные.</string>
+    <string name="slide1_body2">После нажатия «Оформить займ» заявка поступит в банк</string>
+    <string name="slide2_headline">Получить займ</string>
+    <string name="slide2_body1">Отслеживайте изменение статуса заявки.</string>
+    <string name="slide2_body2">Когда займ будет одобрен, подойдите с паспортом в отделение банка для подписания договора</string>
+    <string name="slide3_headline">Оформленные займы</string>
+    <string name="slide3_body">На главном экране приложения отображается список оформленных займов.</string>
+    <string name="fragment_left_button">Далее</string>
+    <string name="fragment_left_button_placeholder">Text button</string>
+</resources>
