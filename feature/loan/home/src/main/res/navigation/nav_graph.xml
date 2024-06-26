@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.tirexmurina.feature.loan.home.homeTab.homeScreen.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loansFragment"
+            app:destination="@id/loansFragment"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_requestFragment"
+            app:destination="@id/requestFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="com.tirexmurina.feature.loan.home.homeTab.requestScreen.ui.RequestFragment"
+        android:label="fragment_request"
+        tools:layout="@layout/fragment_request">
+        <argument
+            android:name="amount"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_requestFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.tirexmurina.feature.loan.home.menuTab.menuScreen.ui.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_loansFragment"
+            app:destination="@id/loansFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.tirexmurina.feature.loan.home.menuTab.detailsScreen.ui.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailsFragment_to_loansFragment"
+            app:destination="@id/loansFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loansFragment"
+        android:name="com.tirexmurina.feature.loan.home.menuTab.loansScreen.ui.LoansFragment"
+        android:label="fragment_loans"
+        tools:layout="@layout/fragment_loans" >
+        <action
+            android:id="@+id/action_loansFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_loansFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

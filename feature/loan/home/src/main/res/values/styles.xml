@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="custom_bottom_navigation_view" parent="Theme.Leonov.NoActionBar">
+        <item name="itemTextAppearanceActive">@style/bottom_navigation_view_text_style_active</item>
+        <item name="itemTextAppearanceInactive">@style/bottom_navigation_view_text_style_inactive</item>
+        <item name="itemActiveIndicatorStyle">@null</item>
+        <item name="android:background">?android:windowBackground</item>
+    </style>
+
+    <style name="bottom_navigation_view_text_style_inactive" parent="Theme.Leonov.NoActionBar">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="bottom_navigation_view_text_style_active" parent="Theme.Leonov.NoActionBar">
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:titleTextColor</item>
+    </style>
+
+    <style name="details_label" parent="text_body_2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/normal_margin</item>
+    </style>
+
+    <style name="details_title" parent="text_caption">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginStart">@dimen/normal_margin</item>
+    </style>
+
+    <style name="menu_button_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="menu_button_text" parent="text_body_2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">19dp</item>
+        <item name="android:layout_marginStart">@dimen/semi_normal_margin</item>
+    </style>
+
+    <style name="menu_button_pic" parent="image_toolbar_right">
+        <item name="android:layout_marginEnd">@dimen/semi_normal_margin</item>
+    </style>
+
+    <style name="menu_button_spacer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">19dp</item>
+    </style>
+
+    <style name="request_field_layout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginTop">@dimen/normal_margin</item>
+        <item name="android:layout_marginEnd">@dimen/normal_margin</item>
+    </style>
+
+    <style name="request_field_text" parent="text_body_2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">text|textPersonName</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/globalContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Leonov.NoActionBar"
+    tools:context=".homeTab.homeScreen.ui.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:colorBackground">
+
+        <View
+            android:id="@+id/toolbarView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?android:windowBackground"
+            app:layout_constraintBottom_toBottomOf="@id/toolbarSpacer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/toolbarText"
+            style="@style/text_headline_2"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@string/home_screen_toolbar"
+            app:layout_constraintStart_toStartOf="@id/toolbarView"
+            app:layout_constraintTop_toTopOf="@id/toolbarView" />
+
+        <ImageButton
+            android:id="@+id/toolbarQuestionButton"
+            style="@style/image_toolbar_right"
+            android:src="@drawable/ic_question_svg"
+            app:layout_constraintEnd_toEndOf="@id/toolbarView"
+            app:layout_constraintTop_toTopOf="@id/toolbarText" />
+
+        <Space
+            android:id="@+id/toolbarSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/normal_margin"
+            app:layout_constraintTop_toBottomOf="@id/toolbarText" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/bannerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/newLoanTitle"
+                    style="@style/text_headline_2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:text="@string/home_screen_title_card1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bannerImage" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/newLoanCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:background="@drawable/bg_home_card"
+                    android:paddingHorizontal="@dimen/normal_margin"
+                    android:paddingVertical="@dimen/normal_margin">
+
+                    <EditText
+                        android:id="@+id/amountEditText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/currencyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_margin"
+                        android:text="@string/home_screen_card1_currency"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@id/amountEditText"
+                        app:layout_constraintStart_toEndOf="@id/amountEditText"
+                        app:layout_constraintTop_toTopOf="@id/amountEditText" />
+
+                    <ImageView
+                        style="@style/image_toolbar_left"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/ic_small_edit"
+                        app:layout_constraintStart_toStartOf="@id/currencyText"
+                        app:layout_constraintTop_toTopOf="@id/currencyText" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/amountSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stepSize="1.0"
+                        android:valueFrom="100.0"
+                        android:valueTo="200.0"
+                        app:labelBehavior="gone"
+                        app:layout_constraintTop_toBottomOf="@id/amountEditText"
+                        app:thumbColor="?android:colorBackgroundCacheHint"
+                        app:tickColorActive="?android:colorBackgroundCacheHint"
+                        app:tickColorInactive="?android:unfocusedMonthDateColor"
+                        app:trackColorActive="?android:colorBackgroundCacheHint"
+                        app:trackColorInactive="?android:unfocusedMonthDateColor" />
+
+                    <TextView
+                        android:id="@+id/amountSliderMin"
+                        style="@style/text_caption"
+                        android:layout_width="wrap_content"
+                        android:text="@string/home_screen_left_border_placeholder"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/amountSlider" />
+
+                    <TextView
+                        android:id="@+id/amountSliderMax"
+                        style="@style/text_caption"
+                        android:layout_width="wrap_content"
+                        android:text="@string/home_screen_right_border_placeholder"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/amountSlider" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:dividerColor="?android:colorBackground"
+                        app:layout_constraintEnd_toEndOf="@id/amountSliderMax"
+                        app:layout_constraintStart_toStartOf="@id/amountSliderMin"
+                        app:layout_constraintTop_toBottomOf="@id/amountSliderMin" />
+
+                    <TextView
+                        android:id="@+id/conditionsTitle"
+                        style="@style/text_caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/normal_margin"
+                        android:text="@string/home_screen_conditions_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/amountSliderMin" />
+
+                    <TextView
+                        android:id="@+id/conditionsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_conditions_label_placeholder"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/conditionsTitle" />
+
+                    <android.widget.Button
+                        android:id="@+id/loanRequestButton"
+                        style="@style/button_yellow"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/home_screen_card1_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/conditionsLabel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/loansTitle"
+                    style="@style/text_headline_2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:text="@string/home_screen_conditions_card2_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/newLoanCard"
+
+                    />
+
+                <TextView
+                    android:id="@+id/loansEmptyLabel"
+                    style="@style/text_caption"
+                    android:layout_width="wrap_content"
+                    android:text="@string/home_screen_card2_empty_label"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/loansCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_home_card"
+                    android:paddingHorizontal="@dimen/normal_margin"
+                    android:paddingVertical="@dimen/normal_margin">
+
+                    <LinearLayout
+                        android:id="@+id/loansContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </LinearLayout>
+
+                    <android.widget.Button
+                        android:id="@+id/loansButton"
+                        style="@style/button_grey"
+                        android:layout_marginTop="@dimen/normal_margin"
+                        android:text="@string/home_screen_card2_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/loansContainer" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="26dp"
+        android:indeterminate="true"
+        android:indeterminateTint="?android:icon"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

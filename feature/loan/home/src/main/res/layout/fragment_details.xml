@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/globalContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Leonov.NoActionBar"
+    tools:context=".menuTab.detailsScreen.ui.DetailsFragment">
+
+    <View
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?android:windowBackground"
+        app:layout_constraintBottom_toBottomOf="@id/toolbarSpacer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/toolbarBackButton"
+        style="@style/image_toolbar_left"
+        android:src="@drawable/ic_arrow_left"
+        app:layout_constraintStart_toStartOf="@id/toolbarView"
+        app:layout_constraintTop_toTopOf="@id/toolbarView" />
+
+
+    <TextView
+        android:id="@+id/toolbarText"
+        style="@style/text_headline_2"
+        android:layout_marginStart="@dimen/huge_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        app:layout_constraintStart_toEndOf="@id/toolbarBackButton"
+        app:layout_constraintTop_toTopOf="@id/toolbarView"
+        tools:text="№ 0000000" />
+
+    <Space
+        android:id="@+id/toolbarSpacer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_margin"
+        app:layout_constraintTop_toBottomOf="@id/toolbarText" />
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?android:colorBackground"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/normal_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/firstCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:background="@drawable/bg_home_card"
+            android:paddingBottom="@dimen/normal_margin">
+
+            <TextView
+                android:id="@+id/firstNameLabel"
+                style="@style/details_label"
+                android:layout_marginTop="@dimen/normal_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Иван" />
+
+            <TextView
+                android:id="@+id/firstNameTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_name_title"
+                app:layout_constraintBottom_toBottomOf="@id/firstNameLabel"
+                app:layout_constraintEnd_toStartOf="@id/firstNameLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/lastNameLabel"
+                style="@style/details_label"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstNameLabel"
+                tools:text="Петров"
+
+                />
+
+            <TextView
+                android:id="@+id/lastNameTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_surname_title"
+                app:layout_constraintBottom_toBottomOf="@id/lastNameLabel"
+                app:layout_constraintEnd_toStartOf="@id/lastNameLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/phoneLabel"
+                style="@style/details_label"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastNameLabel"
+                tools:text="+7 923 145-88-90" />
+
+            <TextView
+                android:id="@+id/phoneTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_phone_title"
+                app:layout_constraintBottom_toBottomOf="@id/phoneLabel"
+                app:layout_constraintEnd_toStartOf="@id/phoneLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_home_card"
+            android:paddingBottom="@dimen/normal_margin">
+
+            <TextView
+                android:id="@+id/idLabel"
+                style="@style/details_label"
+                android:layout_marginTop="@dimen/normal_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="№ 176899134565" />
+
+            <TextView
+                android:id="@+id/idTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_id_title"
+                app:layout_constraintBottom_toBottomOf="@id/idLabel"
+                app:layout_constraintEnd_toStartOf="@id/idLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/dateLabel"
+                style="@style/details_label"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idLabel"
+                tools:text="25.05.2024" />
+
+            <TextView
+                android:id="@+id/dateTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_date_title"
+                app:layout_constraintBottom_toBottomOf="@id/dateLabel"
+                app:layout_constraintEnd_toStartOf="@id/dateLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/periodLabel"
+                style="@style/details_label"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dateLabel"
+                tools:text="5" />
+
+            <TextView
+                android:id="@+id/periodTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_period_title"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/periodLabel"
+                app:layout_constraintEnd_toStartOf="@id/periodLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/percentLabel"
+                style="@style/details_label"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/periodLabel"
+                tools:text="12 %" />
+
+            <TextView
+                android:id="@+id/percentTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_percent_title"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/percentLabel"
+                app:layout_constraintEnd_toStartOf="@id/percentLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/amountLabel"
+                style="@style/details_label"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/percentLabel"
+                tools:text="10 000 ₽" />
+
+            <TextView
+                android:id="@+id/amountTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_amount_title"
+                app:layout_constraintBottom_toBottomOf="@id/amountLabel"
+                app:layout_constraintEnd_toStartOf="@id/amountLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/thirdCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:background="@drawable/bg_home_card"
+            android:paddingBottom="@dimen/normal_margin">
+
+            <TextView
+                android:id="@+id/stateLabel"
+                style="@style/details_label"
+                android:layout_marginTop="@dimen/normal_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="На рассмотрении" />
+
+            <TextView
+                android:id="@+id/stateTitle"
+                style="@style/details_title"
+                android:text="@string/details_screen_status_title"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/stateLabel"
+                app:layout_constraintEnd_toStartOf="@id/stateLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/infoTitle"
+            style="@style/text_caption"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/details_screen_hint" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="26dp"
+        android:indeterminate="true"
+        android:indeterminateTint="?android:icon"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
