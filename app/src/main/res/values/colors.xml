@@ -2,4 +2,49 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="day_background_primary">#FFFFFF</color>
+    <color name="day_background_secondary">#F1F1F2</color>
+    <color name="day_background_tertiary">#9D9E9F</color>
+    <color name="day_background_disable">#E5E5E5</color>
+    <color name="day_background_invert">#272F3A</color>
+    <color name="day_font_primary">#3E3E3E</color>
+    <color name="day_font_secondary">#73787F</color>
+    <color name="day_font_disable">#A1A5AA</color>
+    <color name="day_font_invert">#FFFFFF</color>
+    <color name="day_permanent_primary">#FED200</color>
+    <color name="day_permanent_primary_light">#FFE982</color>
+    <color name="day_permanent_primary_dark">#F1CB16</color>
+    <color name="day_indicator_error">#E53E3E</color>
+    <color name="day_indicator_positive">#19B36D</color>
+    <color name="day_indicator_attention">#FE9800</color>
+    <color name="day_border_primary">#959698</color>
+    <color name="day_border_secondary">#E3E4E5</color>
+    <color name="day_icon_primary">#151E2A</color>
+    <color name="day_icon_secondary">#73787F</color>
+    <color name="day_icon_disable">#A1A5AA</color>
+    <color name="day_icon_invert">#FFFFFF</color>
+
+    <color name="night_background_primary">#151E2A</color>
+    <color name="night_background_secondary">#313944</color>
+    <color name="night_background_tertiary">#363A42</color>
+    <color name="night_background_disable">#E5E5E5</color>
+    <color name="night_background_invert">#F5F5F5</color>
+    <color name="night_font_primary">#FFFFFF</color>
+    <color name="night_font_secondary">#A1A5AA</color>
+    <color name="night_font_disable">#73787F</color>
+    <color name="night_font_invert">#151E2A</color>
+    <color name="night_permanent_primary">#FED200</color>
+    <color name="night_permanent_primary_light">#FFE982</color>
+    <color name="night_permanent_primary_dark">#DEB800</color>
+    <color name="night_indicator_error">#E53E3E</color>
+    <color name="night_indicator_positive">#19B36D</color>
+    <color name="night_indicator_attention">#FE9800</color>
+    <color name="night_border_primary">#B4B4B4</color>
+    <color name="night_border_secondary">#363E48</color>
+    <color name="night_icon_primary">#FFFFFF</color>
+    <color name="night_icon_secondary">#A1A5AA</color>
+    <color name="night_icon_disable">#73787F</color>
+    <color name="night_icon_invert">#151E2A</color>
+
 </resources>
