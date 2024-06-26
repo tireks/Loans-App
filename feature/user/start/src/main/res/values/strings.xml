@@ -1,0 +1,10 @@
+<resources>
+    <string name="bottom_container_password_title">Пароль:</string>
+    <string name="bottom_container_login_title">Логин:</string>
+    <string name="bottom_container_button_title">Войти</string>
+    <string name="bottom_container_password_conf_title">Повторите пароль</string>
+    <string name="login_alert">Логин должен содержать только символы латиницы и цифры</string>
+    <string name="password_alert">Пароль должен содержать только символы латиницы и цифры</string>
+    <string name="password_conf_alert">Пароли не совпадают</string>
+    <string name="dialog_placeholder">Place holder</string>
+</resources>
