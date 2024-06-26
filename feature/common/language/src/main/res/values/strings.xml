@@ -1,0 +1,6 @@
+<resources>
+    <string name="language_toolbar_text">Язык</string>
+    <string name="language_russian_text">Русский</string>
+    <string name="language_english_text">English</string>
+    <string name="language_button">Применить</string>
+</resources>

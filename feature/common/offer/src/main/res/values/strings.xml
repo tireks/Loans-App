@@ -1,0 +1,5 @@
+<resources>
+    <string name="offer_title">Специальное предложение</string>
+    <string name="offer_hint">Погасите займ досрочно и мы увеличим лимит для следующего займа</string>
+    <string name="offer_button">Бдижайшее отделение банка</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="result_screen_success_title">Получите 50 000 ₽ в банке</string>
+    <string name="result_screen_success_hint">Для получения придите в банк с паспортом до 20 мая</string>
+    <string name="result_screen_success_button">Посмотреть адреса банков</string>
+    <string name="result_screen_error_title">Заявка не одобрена</string>
+    <string name="result_screen_error_hint">Сейчас мы не можем одобрить вашу заявку</string>
+    <string name="result_screen_error_button">Вернуться на главную</string>
+</resources>
