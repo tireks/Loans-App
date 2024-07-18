@@ -11,7 +11,7 @@ import com.tirexmurina.shared.user.core.data.UserRepositoryImpl
 import com.tirexmurina.shared.user.core.data.local.SharedPreferencesImpl
 import com.tirexmurina.shared.user.core.data.remote.AuthService
 import com.tirexmurina.shared.user.core.domain.repository.UserRepository
-import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailability
+import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailabilityUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.ClearTokenUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.LoginUserUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.RegisterUserUseCase
@@ -36,6 +36,6 @@ fun provideDomainModule() : Module =
         factory { GetLoansByIdUseCase(repository = get()) }
         factory { GetLoanConditionsUseCase(repository = get()) }
         factory { RequestLoanUseCase(repository = get()) }
-        factory { AskTokenAvailability(repository = get()) }
+        factory { AskTokenAvailabilityUseCase(repository = get()) }
         factory { ClearTokenUseCase(repository = get()) }
     }
