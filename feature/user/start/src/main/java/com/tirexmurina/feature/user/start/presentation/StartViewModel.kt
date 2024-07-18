@@ -12,7 +12,7 @@ import com.tirexmurina.shared.user.core.data.remote.NotFoundException
 import com.tirexmurina.shared.user.core.data.remote.RequestFault
 import com.tirexmurina.shared.user.core.data.remote.ResponseFault
 import com.tirexmurina.shared.user.core.data.remote.UnauthorizedException
-import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailability
+import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailabilityUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.LoginUserUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.RegisterUserUseCase
 import com.tirexmurina.util.core.exeptions.SuccessfulThrowable
@@ -24,7 +24,7 @@ import kotlinx.coroutines.withContext
 class StartViewModel (
     private val loginUserUseCase: LoginUserUseCase,
     private val registerUserUseCase: RegisterUserUseCase,
-    private val askTokenAvailability: AskTokenAvailability,
+    private val askTokenAvailability: AskTokenAvailabilityUseCase,
     private val router: StartRouter
 ) : ViewModel() {
     private val _state = MutableLiveData<StartState>(StartState.Initial)

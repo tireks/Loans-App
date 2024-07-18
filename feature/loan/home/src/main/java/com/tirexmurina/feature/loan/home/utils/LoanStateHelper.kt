@@ -1,7 +1,6 @@
 package com.tirexmurina.feature.loan.home.utils
 
 import android.content.Context
-import com.tirexmurina.feature.loan.home.R
 import com.tirexmurina.shared.loan.core.domain.entity.LoanStatus
 import com.tirexmurina.util.features.fragments.getThemeColor
 
