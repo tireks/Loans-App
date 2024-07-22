@@ -1,6 +1,6 @@
 package com.tirexmurina.shared.user.core.data.remote
 
-import com.tirexmurina.shared.user.core.data.local.SharedPreferencesImpl
+import com.tirexmurina.shared.user.core.data.local.AuthTokenDataStore
 import com.tirexmurina.shared.user.core.data.local.TokenEmptyException
 import okhttp3.Interceptor
 import okhttp3.Request
@@ -8,7 +8,7 @@ import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.json.JSONObject
 
-class TokenGetInterceptor(private val sharedPreferencesImpl: SharedPreferencesImpl) : Interceptor {
+class TokenGetInterceptor(private val authTokenDataStore: AuthTokenDataStore) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
 
@@ -34,7 +34,7 @@ class TokenGetInterceptor(private val sharedPreferencesImpl: SharedPreferencesIm
             val content = responseBody?.string()?.trim()
 
             if (!content.isNullOrEmpty()) {
-                sharedPreferencesImpl.setAccessToken(content)
+                authTokenDataStore.setAccessToken(content)
                 val jsonObject = JSONObject()
                 jsonObject.put("token", content)
                 val jsonContent = jsonObject.toString()
@@ -46,7 +46,8 @@ class TokenGetInterceptor(private val sharedPreferencesImpl: SharedPreferencesIm
     }
 
     private fun handleAuthenticatedRequest(chain: Interceptor.Chain, request: Request): Response {
-        val token = sharedPreferencesImpl.getAccessToken() ?: throw TokenEmptyException("No token found")
+        val token =
+            authTokenDataStore.getAccessToken() ?: throw TokenEmptyException("No token found")
         val newRequest = request.newBuilder()
             .addHeader("Authorization", token)
             .build()

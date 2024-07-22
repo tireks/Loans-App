@@ -4,9 +4,9 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.tirexmurina.leonov.gson.LocalDateTimeGsonAdapter
 import com.tirexmurina.shared.loan.core.data.remote.LoanService
-import com.tirexmurina.shared.user.core.data.local.SharedPreferencesImpl
-import com.tirexmurina.shared.user.core.data.remote.TokenGetInterceptor
+import com.tirexmurina.shared.user.core.data.local.AuthTokenDataStore
 import com.tirexmurina.shared.user.core.data.remote.AuthService
+import com.tirexmurina.shared.user.core.data.remote.TokenGetInterceptor
 import com.tirexmurina.util.core.service.BASE_URL
 import okhttp3.OkHttpClient
 import org.koin.core.module.Module
@@ -23,8 +23,8 @@ private const val WRITE_TIMEOUT = 10L
 private const val READ_TIMEOUT = 10L
 
 
-private fun provideAuthInterceptor(sharedPreferencesImpl: SharedPreferencesImpl): TokenGetInterceptor =
-    TokenGetInterceptor(sharedPreferencesImpl)
+private fun provideAuthInterceptor(authTokenDataStore: AuthTokenDataStore): TokenGetInterceptor =
+    TokenGetInterceptor(authTokenDataStore)
 
 
 private fun provideOkHttpClient(authInterceptor: TokenGetInterceptor): OkHttpClient =
@@ -54,7 +54,7 @@ private fun provideLoanService(retrofit: Retrofit): LoanService = retrofit.creat
 
 fun provideNetworkModule(): Module =
     module {
-        single { provideAuthInterceptor(sharedPreferencesImpl = get()) }
+        single { provideAuthInterceptor(authTokenDataStore = get()) }
         single { provideOkHttpClient(authInterceptor = get()) }
         single { provideGson() }
         single { provideRetrofit(okHttpClient = get(), gson = get()) }

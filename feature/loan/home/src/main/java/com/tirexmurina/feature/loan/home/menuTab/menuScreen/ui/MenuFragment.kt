@@ -82,7 +82,7 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>() {
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "OK",
+            getString(R.string.menu_positive_button),
             getString(R.string.menu_error_placeholder)
         )
     }
@@ -101,9 +101,9 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>() {
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "Выйти",
-            "Отмена",
-            "Вы точно хотите выйти?"
+            getString(R.string.exit_positive_button),
+            getString(R.string.exit_negative_button),
+            getString(R.string.exit_dialog_message)
         )
     }
 

@@ -3,7 +3,7 @@ package com.tirexmurina.shared.user.core.data.local
 import android.content.SharedPreferences
 
 
-class SharedPreferencesImpl(
+class AuthTokenDataStore(
     private val sharedPreferences: SharedPreferences
 ) {
     companion object {

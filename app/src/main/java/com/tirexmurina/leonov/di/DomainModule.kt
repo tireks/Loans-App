@@ -8,7 +8,7 @@ import com.tirexmurina.shared.loan.core.domain.usecase.GetLoansByIdUseCase
 import com.tirexmurina.shared.loan.core.domain.usecase.GetLoansUseCase
 import com.tirexmurina.shared.loan.core.domain.usecase.RequestLoanUseCase
 import com.tirexmurina.shared.user.core.data.UserRepositoryImpl
-import com.tirexmurina.shared.user.core.data.local.SharedPreferencesImpl
+import com.tirexmurina.shared.user.core.data.local.AuthTokenDataStore
 import com.tirexmurina.shared.user.core.data.remote.AuthService
 import com.tirexmurina.shared.user.core.domain.repository.UserRepository
 import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailabilityUseCase
@@ -18,15 +18,18 @@ import com.tirexmurina.shared.user.core.domain.usecase.RegisterUserUseCase
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-private fun provideUserRepository(authService: AuthService, sharedPreferencesImpl: SharedPreferencesImpl) : UserRepository =
-    UserRepositoryImpl(authService, sharedPreferencesImpl)
+private fun provideUserRepository(
+    authService: AuthService,
+    authTokenDataStore: AuthTokenDataStore
+): UserRepository =
+    UserRepositoryImpl(authService, authTokenDataStore)
 
 private fun provideLoanRepository(loanService: LoanService) : LoanRepository =
     LoanRepositoryImpl(loanService)
 
 fun provideDomainModule() : Module =
     module {
-        single { provideUserRepository(authService = get(), sharedPreferencesImpl = get())}
+        single { provideUserRepository(authService = get(), authTokenDataStore = get()) }
         single { provideLoanRepository(loanService = get()) }
 
 

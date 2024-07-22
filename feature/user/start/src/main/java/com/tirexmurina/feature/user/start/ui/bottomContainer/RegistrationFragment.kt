@@ -71,12 +71,9 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
                 )
                 for (editText in correctFieldsViews) {
                     if (editText.text.toString().isEmpty()) {
-                        showToast(requireContext(), "Заполните пожалуйста правильно все поля")
+                        showToast(requireContext(), getString(R.string.empty_fields_warning))
                         break
                     }
-                }
-                if (state.troubleList.isNotEmpty()){
-
                 }
                 state.troubleList.forEach { troubleField ->
                     when(troubleField){

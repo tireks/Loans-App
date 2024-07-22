@@ -15,7 +15,6 @@ import com.tirexmurina.shared.user.core.data.remote.UnauthorizedException
 import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailabilityUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.LoginUserUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.RegisterUserUseCase
-import com.tirexmurina.util.core.exeptions.SuccessfulThrowable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -57,10 +56,7 @@ class StartViewModel (
             try {
                 val authCredentials = AuthModel(login, password)
                 withContext(Dispatchers.IO){ registerUserUseCase(authCredentials) }
-
-            } catch (success: SuccessfulThrowable) {
                 performLogin(onRegistration = true, login, password)
-
             }catch (e : Exception){
                 handleError(e)
             }
@@ -76,7 +72,6 @@ class StartViewModel (
             try {
                 val authCredentials = AuthModel(login, password)
                 withContext(Dispatchers.IO){ loginUserUseCase(authCredentials) }
-            } catch (success: SuccessfulThrowable) {
                 openOnboarding(userIsNewbie = onRegistration)
             } catch (e : Exception){
                 handleError(e)

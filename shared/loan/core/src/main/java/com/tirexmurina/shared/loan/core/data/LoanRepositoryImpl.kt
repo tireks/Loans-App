@@ -1,11 +1,11 @@
 package com.tirexmurina.shared.loan.core.data
 
 
-import com.tirexmurina.shared.loan.core.data.remote.LoanService
 import com.tirexmurina.shared.loan.core.data.models.LoanConditionsModel
 import com.tirexmurina.shared.loan.core.data.models.LoanRequestModel
 import com.tirexmurina.shared.loan.core.data.remote.ForbiddenException
 import com.tirexmurina.shared.loan.core.data.remote.LoanConditionsCannotFind
+import com.tirexmurina.shared.loan.core.data.remote.LoanService
 import com.tirexmurina.shared.loan.core.data.remote.NetworkFault
 import com.tirexmurina.shared.loan.core.data.remote.NotFoundException
 import com.tirexmurina.shared.loan.core.data.remote.RequestFault
@@ -14,7 +14,6 @@ import com.tirexmurina.shared.loan.core.data.remote.SingleLoanCannotFind
 import com.tirexmurina.shared.loan.core.data.remote.UnauthorizedException
 import com.tirexmurina.shared.loan.core.domain.entity.Loan
 import com.tirexmurina.shared.loan.core.domain.repository.LoanRepository
-import com.tirexmurina.util.core.exeptions.SuccessfulThrowable
 import com.tirexmurina.util.core.exeptions.UnsuccessfulException
 import retrofit2.Response
 import java.io.IOException
@@ -71,9 +70,7 @@ class LoanRepositoryImpl(
         try {
             val response = loanService.requestLoan(loan)
             if (response.isSuccessful) {
-                if (response.code() == 200) {
-                    throw SuccessfulThrowable("Request successful")
-                } else {
+                if (response.code() != 200) {
                     throw UnsuccessfulException("Request unsuccessful")
                 }
             } else {

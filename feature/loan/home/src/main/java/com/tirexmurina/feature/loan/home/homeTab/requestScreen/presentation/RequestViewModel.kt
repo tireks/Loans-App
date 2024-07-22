@@ -14,7 +14,6 @@ import com.tirexmurina.shared.loan.core.data.remote.ResponseFault
 import com.tirexmurina.shared.loan.core.data.remote.UnauthorizedException
 import com.tirexmurina.shared.loan.core.domain.usecase.GetLoanConditionsUseCase
 import com.tirexmurina.shared.loan.core.domain.usecase.RequestLoanUseCase
-import com.tirexmurina.util.core.exeptions.SuccessfulThrowable
 import com.tirexmurina.util.core.exeptions.UnsuccessfulException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -65,7 +64,6 @@ class RequestViewModel(
                 withContext(Dispatchers.IO){
                     requestLoanUseCase(loanRequest)
                 }
-            } catch (successfulResult : SuccessfulThrowable){
                 openSuccessScreen()
             } catch (unsuccessfulResult : UnsuccessfulException){
                 openFaultScreen()

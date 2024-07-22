@@ -9,4 +9,7 @@
     <string name="slide3_body">На главном экране приложения отображается список оформленных займов.</string>
     <string name="fragment_left_button">Далее</string>
     <string name="fragment_left_button_placeholder">Text button</string>
+    <string name="onboarbing_next_button_text">Далее</string>
+    <string name="onboarbing_prev_button_text">Назад</string>
+    <string name="onboarbing_close_button_text">Закрыть</string>
 </resources>

@@ -8,12 +8,12 @@ import androidx.activity.addCallback
 import androidx.viewpager2.widget.ViewPager2
 import com.tirexmurina.feature.common.onboarding.R
 import com.tirexmurina.feature.common.onboarding.databinding.FragmentOnboardingBinding
-import com.tirexmurina.util.features.fragments.BaseFragment
-import com.tirexmurina.util.features.fragments.hide
-import com.tirexmurina.util.features.fragments.show
 import com.tirexmurina.feature.common.onboarding.presentation.OnboardingState
 import com.tirexmurina.feature.common.onboarding.presentation.OnboardingViewModel
 import com.tirexmurina.feature.common.onboarding.presentation.ViewPagerAdapter
+import com.tirexmurina.util.features.fragments.BaseFragment
+import com.tirexmurina.util.features.fragments.hide
+import com.tirexmurina.util.features.fragments.show
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
@@ -96,7 +96,7 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
             when (position) {
                 0 -> {
                     leftButton.visibility = View.GONE
-                    rightButton.text = "Далее"
+                    rightButton.text = getString(R.string.onboarbing_next_button_text)
                     rightButton.setOnClickListener {
                         viewPager.setCurrentItem(1, true)
                     }
@@ -106,8 +106,8 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
                 }
                 1 -> {
                     leftButton.visibility = View.VISIBLE
-                    leftButton.text = "Назад"
-                    rightButton.text = "Далее"
+                    leftButton.text = getString(R.string.onboarbing_prev_button_text)
+                    rightButton.text = getString(R.string.onboarbing_next_button_text)
                     leftButton.setOnClickListener {
                         viewPager.setCurrentItem(viewPager.currentItem - 1, true)
                     }
@@ -119,7 +119,7 @@ class OnboardingFragment : BaseFragment<FragmentOnboardingBinding>() {
                     }
                 }
                 2 -> {
-                    rightButton.text = "Закрыть"
+                    rightButton.text = getString(R.string.onboarbing_close_button_text)
                     rightButton.setOnClickListener {
                         viewModel.openHomeScreen()
                     }
