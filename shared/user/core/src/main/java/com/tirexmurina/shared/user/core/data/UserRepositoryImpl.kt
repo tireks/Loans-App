@@ -29,7 +29,9 @@ class UserRepositoryImpl(
         }
 
         if (response.isSuccessful) {
-            val body = response.body() ?: throw UnsuccessfulException("Response body is null")
+            if (response.body() == null) {
+                throw UnsuccessfulException("Response body is null")
+            }
         } else {
             handleErrorResponse(response)
         }
