@@ -1,6 +1,6 @@
 package com.tirexmurina.shared.user.core.data
 
-import com.tirexmurina.shared.user.core.data.local.SharedPreferencesImpl
+import com.tirexmurina.shared.user.core.data.local.AuthTokenDataStore
 import com.tirexmurina.shared.user.core.data.local.SharedPrefsCorruptedException
 import com.tirexmurina.shared.user.core.data.models.AuthModel
 import com.tirexmurina.shared.user.core.data.remote.AuthService
@@ -11,14 +11,13 @@ import com.tirexmurina.shared.user.core.data.remote.RequestFault
 import com.tirexmurina.shared.user.core.data.remote.ResponseFault
 import com.tirexmurina.shared.user.core.data.remote.UnauthorizedException
 import com.tirexmurina.shared.user.core.domain.repository.UserRepository
-import com.tirexmurina.util.core.exeptions.SuccessfulThrowable
 import com.tirexmurina.util.core.exeptions.UnsuccessfulException
 import retrofit2.Response
 import java.io.IOException
 
 class UserRepositoryImpl(
     private val authService: AuthService,
-    private val sharedPreferencesImpl: SharedPreferencesImpl
+    private val authTokenDataStore: AuthTokenDataStore
 ) : UserRepository {
     override suspend fun register(authModel: AuthModel) {
         val response = try {
@@ -30,12 +29,7 @@ class UserRepositoryImpl(
         }
 
         if (response.isSuccessful) {
-            val body = response.body()
-            if (body != null) {
-                throw SuccessfulThrowable("Register Successful")
-            } else {
-                throw UnsuccessfulException("Response body is null")
-            }
+            val body = response.body() ?: throw UnsuccessfulException("Response body is null")
         } else {
             handleErrorResponse(response)
         }
@@ -52,9 +46,7 @@ class UserRepositoryImpl(
 
         if (response.isSuccessful) {
             val body = response.body()?.string()
-            if (!body.isNullOrEmpty()) {
-                throw SuccessfulThrowable("Login successful")
-            } else {
+            if (body.isNullOrEmpty()) {
                 throw UnsuccessfulException("Empty response body")
             }
         } else {
@@ -64,7 +56,7 @@ class UserRepositoryImpl(
 
     override suspend fun tokenAvailable(): Boolean {
         return try{
-            sharedPreferencesImpl.isAccessTokenSet()
+            authTokenDataStore.isAccessTokenSet()
         } catch ( exception : Exception ){
             throw SharedPrefsCorruptedException("some problems with sharedprefs")
         }
@@ -72,7 +64,7 @@ class UserRepositoryImpl(
 
     override suspend fun clearToken() {
         try {
-            sharedPreferencesImpl.clearAccessToken()
+            authTokenDataStore.clearAccessToken()
         } catch ( exception : Exception  ) {
             throw SharedPrefsCorruptedException("some problems with sharedprefs")
         }

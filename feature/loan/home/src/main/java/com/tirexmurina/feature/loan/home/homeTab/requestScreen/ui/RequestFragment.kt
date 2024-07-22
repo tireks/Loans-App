@@ -88,21 +88,21 @@ class RequestFragment : BaseFragment<FragmentRequestBinding>() {
         binding.contentContainer.hide()
         when(state){
             RequestState.Error.Forbidden ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.request_forbidden_error_text))
             RequestState.Error.LoanConditionsCannotFind ->
-                createDialog("Какие-то проблемы на сервере. Не удается найти условия займа")
+                createDialog(getString(R.string.request_loans_conditions_error_text))
             RequestState.Error.NetworkFault ->
-                createDialog("Проблема с сетевым подключением. Проверьте, включен ли у вас интернет")
+                createDialog(getString(R.string.request_network_error_text))
             RequestState.Error.NotFound ->
-                createDialog("Важный элемент не был найден в ответе сервера")
+                createDialog(getString(R.string.request_not_found_error_text))
             RequestState.Error.RequestFault ->
-                createDialog("Проблема с запросом на сервер")
+                createDialog(getString(R.string.request_request_error_text))
             RequestState.Error.ResponseFault ->
-                createDialog("Непредвиденная ошибка в ответе сервера")
+                createDialog(getString(R.string.request_response_error_text))
             RequestState.Error.Unauthorized ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.request_unauthorized_error_text))
             RequestState.Error.UnknownError ->
-                createDialog("Непредвиденная ошибка")
+                createDialog(getString(R.string.request_unknown_error_text))
         }
     }
 
@@ -112,7 +112,7 @@ class RequestFragment : BaseFragment<FragmentRequestBinding>() {
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "OK",
+            getString(R.string.request_positive_button),
             msg
         )
     }
@@ -144,7 +144,7 @@ class RequestFragment : BaseFragment<FragmentRequestBinding>() {
                 )
                 for (editText in correctFieldsViews) {
                     if (editText.text.toString().isEmpty()) {
-                        showToast(requireContext(), "Заполните пожалуйста правильно все поля")
+                        showToast(requireContext(), getString(R.string.empty_fields_warning))
                         break
                     }
                 }

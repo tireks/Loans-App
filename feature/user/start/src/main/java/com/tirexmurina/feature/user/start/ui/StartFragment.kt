@@ -49,21 +49,21 @@ class StartFragment : BaseFragment<FragmentStartBinding>(), BottomContainerFragm
         binding.bottomContainer.hide()
         when(state){
             StartState.Error.Forbidden ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.start_forbidden_error_text))
             StartState.Error.SharedPrefsCorrupted ->
-                createDialog("Какие-то проблемы c внутренним хранилищем. Нет доступа к токену")
+                createDialog(getString(R.string.start_shared_prefs_error_text))
             StartState.Error.NetworkFault ->
-                createDialog("Проблема с сетевым подключением. Проверьте, включен ли у вас интернет")
+                createDialog(getString(R.string.start_network_error_text))
             StartState.Error.NotFound ->
-                createDialog("Важный элемент не был найден в ответе сервера")
+                createDialog(getString(R.string.start_not_found_error_text))
             StartState.Error.RequestFault ->
-                createDialog("Проблема с запросом на сервер")
+                createDialog(getString(R.string.start_request_error_text))
             StartState.Error.ResponseFault ->
-                createDialog("Непредвиденная ошибка в ответе сервера")
+                createDialog(getString(R.string.start_response_error_text))
             StartState.Error.Unauthorized ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.start_unauthorized_error_text))
             StartState.Error.UnknownError ->
-                createDialog("Непредвиденная ошибка")
+                createDialog(getString(R.string.start_unknown_error_text))
         }
     }
 
@@ -73,7 +73,7 @@ class StartFragment : BaseFragment<FragmentStartBinding>(), BottomContainerFragm
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "OK",
+            getString(R.string.start_positive_button),
             msg
         )
     }

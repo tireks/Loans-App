@@ -68,21 +68,21 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         binding.contentContainer.hide()
         when(state){
             DetailsState.Error.Forbidden ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.details_forbidden_error_text))
             DetailsState.Error.SingleLoanCannotFind ->
-                createDialog("Какие-то проблемы на сервере. Не удается найти условия займа")
+                createDialog(getString(R.string.details_single_loan_error_text))
             DetailsState.Error.NetworkFault ->
-                createDialog("Проблема с сетевым подключением. Проверьте, включен ли у вас интернет")
+                createDialog(getString(R.string.details_network_error_text))
             DetailsState.Error.NotFound ->
-                createDialog("Важный элемент не был найден в ответе сервера")
+                createDialog(getString(R.string.details_not_found_error_text))
             DetailsState.Error.RequestFault ->
-                createDialog("Проблема с запросом на сервер")
+                createDialog(getString(R.string.details_request_error_text))
             DetailsState.Error.ResponseFault ->
-                createDialog("Непредвиденная ошибка в ответе сервера")
+                createDialog(getString(R.string.details_response_error_text))
             DetailsState.Error.Unauthorized ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.details_unauthorized_error_text))
             DetailsState.Error.UnknownError ->
-                createDialog("Непредвиденная ошибка")
+                createDialog(getString(R.string.details_unknown_error_text))
         }
     }
 
@@ -92,7 +92,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "OK",
+            getString(R.string.details_positive_button),
             msg
         )
     }

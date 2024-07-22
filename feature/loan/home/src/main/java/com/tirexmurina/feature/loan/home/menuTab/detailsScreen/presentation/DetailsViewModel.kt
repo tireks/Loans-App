@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tirexmurina.shared.loan.core.data.remote.ForbiddenException
-import com.tirexmurina.shared.loan.core.data.remote.LoanConditionsCannotFind
 import com.tirexmurina.shared.loan.core.data.remote.NetworkFault
 import com.tirexmurina.shared.loan.core.data.remote.NotFoundException
 import com.tirexmurina.shared.loan.core.data.remote.RequestFault
 import com.tirexmurina.shared.loan.core.data.remote.ResponseFault
+import com.tirexmurina.shared.loan.core.data.remote.SingleLoanCannotFind
 import com.tirexmurina.shared.loan.core.data.remote.UnauthorizedException
 import com.tirexmurina.shared.loan.core.domain.usecase.GetLoansByIdUseCase
 import kotlinx.coroutines.Dispatchers
@@ -37,7 +37,7 @@ class DetailsViewModel(
 
     private fun handleError(exception: Exception) {
         when(exception){
-            is LoanConditionsCannotFind -> _state.value = DetailsState.Error.SingleLoanCannotFind
+            is SingleLoanCannotFind -> _state.value = DetailsState.Error.SingleLoanCannotFind
             is RequestFault -> _state.value = DetailsState.Error.RequestFault
             is UnauthorizedException -> _state.value = DetailsState.Error.Unauthorized
             is ForbiddenException -> _state.value = DetailsState.Error.Forbidden

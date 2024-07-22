@@ -98,28 +98,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.contentContainer.hide()
         when (state) {
             HomeState.Error.Forbidden ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.home_forbidden_error_text))
 
             HomeState.Error.LoanConditionsCannotFind ->
-                createDialog("Какие-то проблемы на сервере. Не удается найти условия займа")
+                createDialog(getString(R.string.home_loan_conditions_error_text))
 
             HomeState.Error.NetworkFault ->
-                createDialog("Проблема с сетевым подключением. Проверьте, включен ли у вас интернет")
+                createDialog(getString(R.string.home_network_error_text))
 
             HomeState.Error.NotFound ->
-                createDialog("Важный элемент не был найден в ответе сервера")
+                createDialog(getString(R.string.home_not_found_error_text))
 
             HomeState.Error.RequestFault ->
-                createDialog("Проблема с запросом на сервер")
+                createDialog(getString(R.string.home_request_error_text))
 
             HomeState.Error.ResponseFault ->
-                createDialog("Непредвиденная ошибка в ответе сервера")
+                createDialog(getString(R.string.home_response_error_text))
 
             HomeState.Error.Unauthorized ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                createDialog(getString(R.string.home_unauthorized_error_text))
 
             HomeState.Error.UnknownError ->
-                createDialog("Непредвиденная ошибка")
+                createDialog(getString(R.string.home_unknown_error_text))
         }
     }
 
@@ -129,7 +129,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "OK",
+            getString(R.string.positive_button),
             msg
         )
     }
@@ -161,8 +161,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.amountSlider.valueFrom = 100.toFloat()
         binding.amountSliderMax.text =
             getString(R.string.money_amount_template, conditions.maxAmount.toInt().toString())
-        binding.amountSliderMin.text = getString(R.string.money_amount_template, "100")
-        binding.amountEditText.setText("100")
+        binding.amountSliderMin.text = getString(
+            R.string.money_amount_template,
+            "100"
+        )
+        binding.amountEditText.setText(getString(R.string.start_amount))
         binding.conditionsLabel.text = getString(
             R.string.home_screen_conditions_label_template,
             conditions.percent.toString(),

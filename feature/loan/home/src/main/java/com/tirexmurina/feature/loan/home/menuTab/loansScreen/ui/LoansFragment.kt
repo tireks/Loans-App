@@ -81,19 +81,19 @@ class LoansFragment : BaseFragment<FragmentLoansBinding>() {
         binding.contentContainer.hide()
         when(state){
              LoansState.Error.Forbidden ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                 createDialog(getString(R.string.loans_forbidden_error_text))
              LoansState.Error.NetworkFault ->
-                createDialog("Проблема с сетевым подключением. Проверьте, включен ли у вас интернет")
+                 createDialog(getString(R.string.loans_network_error_text))
              LoansState.Error.NotFound ->
-                createDialog("Важный элемент не был найден в ответе сервера")
+                 createDialog(getString(R.string.loans_not_found_error_text))
              LoansState.Error.RequestFault ->
-                createDialog("Проблема с запросом на сервер")
+                 createDialog(getString(R.string.loans_request_error_text))
              LoansState.Error.ResponseFault ->
-                createDialog("Непредвиденная ошибка в ответе сервера")
+                 createDialog(getString(R.string.loans_response_error_text))
              LoansState.Error.Unauthorized ->
-                createDialog("Кажется произошла ошибка авторизации. Попробуйте перзапустить приложение")
+                 createDialog(getString(R.string.loans_unauthorized_error_text))
              LoansState.Error.UnknownError ->
-                createDialog("Непредвиденная ошибка")
+                 createDialog(getString(R.string.loans_unknown_error_text))
         }
     }
 
@@ -103,7 +103,7 @@ class LoansFragment : BaseFragment<FragmentLoansBinding>() {
             R.layout.dialog,
             R.id.dialogTitle,
             requireContext(),
-            "OK",
+            getString(R.string.loans_positive_button),
             msg
         )
     }

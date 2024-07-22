@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayoutMediator
+import com.tirexmurina.feature.user.start.R
 import com.tirexmurina.feature.user.start.databinding.FragmentBottomContainerBinding
 import com.tirexmurina.feature.user.start.presentation.bottomConrainer.BottomViewPagerAdapter
 import com.tirexmurina.util.features.fragments.BaseFragment
@@ -49,8 +50,8 @@ class BottomContainerFragment : BaseFragment<FragmentBottomContainerBinding>() {
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = when (position) {
-                0 -> "Вход"
-                1 -> "Регистрация"
+                0 -> getString(R.string.bottom_tab_sign_in)
+                1 -> getString(R.string.bottom_tab_registartion)
                 else -> null
             }
         }.attach()
