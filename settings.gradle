@@ -23,6 +23,7 @@ rootProject.name = "Leonov"
 include ':app'
 include ':shared:loan:core'
 include ':shared:user:core'
+include ':shared:database:core'
 include ':feature:user:start'
 include ':feature:common:onboarding'
 include ':feature:common:result'

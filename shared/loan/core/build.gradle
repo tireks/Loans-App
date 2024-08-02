@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kspLibrary)
 }
 
 android {
@@ -32,10 +33,17 @@ android {
 dependencies {
 
     implementation libs.androidx.core.ktx
+
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.converter.scalars
     implementation libs.okhttp
+
+    implementation libs.androidx.room.runtime
+    annotationProcessor libs.androidx.room.compiler
+    ksp libs.androidx.room.compiler
+
     implementation project(':util:core')
     implementation project(':util:features')
+
 }
