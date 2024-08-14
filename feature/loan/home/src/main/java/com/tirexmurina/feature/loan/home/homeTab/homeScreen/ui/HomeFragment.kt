@@ -254,7 +254,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             itemDate.text = formatDateForList(loan.date)
 
             itemLayout.setOnClickListener {
-                navigationHost?.fromHomeToDetails(loan.id)
+                navigationHost?.fromHomeToDetails(loan.id.toInt())
             }
 
             binding.loansContainer.addView(itemLayout)

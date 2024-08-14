@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tirexmurina.feature.loan.home.homeTab.homeScreen.presentation.HomeRouter
-import com.tirexmurina.shared.user.core.data.local.SharedPrefsCorruptedException
+import com.tirexmurina.shared.user.core.data.IdSharedPrefsCorruptedException
 import com.tirexmurina.shared.user.core.domain.usecase.ClearTokenUseCase
 import kotlinx.coroutines.launch
 
@@ -55,7 +55,7 @@ class MenuViewModel(
             try {
                 clearTokenUseCase()
                 _state.value = MenuState.Exit.CloseApp
-            } catch ( sharedPrefsException : SharedPrefsCorruptedException) {
+            } catch (sharedPrefsException: IdSharedPrefsCorruptedException) {
                 _state.value = MenuState.ExitError
             }
         }

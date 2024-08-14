@@ -4,14 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tirexmurina.feature.loan.home.homeTab.homeScreen.presentation.HomeRouter
+import com.tirexmurina.shared.loan.core.data.ForbiddenException
+import com.tirexmurina.shared.loan.core.data.LoanConditionsCannotFind
+import com.tirexmurina.shared.loan.core.data.NetworkFault
+import com.tirexmurina.shared.loan.core.data.NotFoundException
+import com.tirexmurina.shared.loan.core.data.RequestFault
+import com.tirexmurina.shared.loan.core.data.ResponseFault
+import com.tirexmurina.shared.loan.core.data.UnauthorizedException
 import com.tirexmurina.shared.loan.core.data.models.LoanRequestModel
-import com.tirexmurina.shared.loan.core.data.remote.ForbiddenException
-import com.tirexmurina.shared.loan.core.data.remote.LoanConditionsCannotFind
-import com.tirexmurina.shared.loan.core.data.remote.NetworkFault
-import com.tirexmurina.shared.loan.core.data.remote.NotFoundException
-import com.tirexmurina.shared.loan.core.data.remote.RequestFault
-import com.tirexmurina.shared.loan.core.data.remote.ResponseFault
-import com.tirexmurina.shared.loan.core.data.remote.UnauthorizedException
 import com.tirexmurina.shared.loan.core.domain.usecase.GetLoanConditionsUseCase
 import com.tirexmurina.shared.loan.core.domain.usecase.RequestLoanUseCase
 import com.tirexmurina.util.core.exeptions.UnsuccessfulException
@@ -54,7 +54,7 @@ class RequestViewModel(
                     getLoanConditionsUseCase()
                 }
                 val loanRequest = LoanRequestModel(
-                    amount = amount.toLong(),
+                    amount = amount,
                     firstName = firstName,
                     lastName = surName,
                     percent = loanConditions.percent,
