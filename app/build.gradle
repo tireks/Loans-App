@@ -35,6 +35,21 @@ android {
     buildFeatures {
         viewBinding true
     }
+    flavorDimensions = ['source']
+    productFlavors {
+        local {
+            dimension 'source'
+            applicationIdSuffix ".local"
+            versionNameSuffix "-local"
+            resValue "string", "app_name", "LoanApp Local"
+        }
+        remote {
+            dimension 'source'
+            applicationIdSuffix ".remote"
+            versionNameSuffix "-remote"
+            resValue "string", "app_name", "LoanApp Remote"
+        }
+    }
 }
 
 dependencies {
@@ -51,12 +66,17 @@ dependencies {
     implementation project(':feature:common:onboarding')
     implementation project(':feature:loan:home')
     implementation project(':shared:loan:core')
+    /*localImplementation project(path: ':shared:loan:core', configuration: 'local')
+    remoteImplementation project(path: ':shared:loan:core', configuration: 'remote')*/
     implementation project(':feature:common:result')
     implementation project(':feature:common:branches')
     implementation project(':feature:common:offer')
     implementation project(':feature:common:help')
     implementation project(':feature:common:language')
     implementation project(':shared:database:core')
+    implementation project(':util:source')
+    implementation project(':shared:user:source')
+    implementation project(':shared:loan:source')
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core

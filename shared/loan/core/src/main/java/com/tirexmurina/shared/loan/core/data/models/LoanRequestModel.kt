@@ -1,7 +1,7 @@
 package com.tirexmurina.shared.loan.core.data.models
 
 data class LoanRequestModel (
-    val amount: Long,
+    val amount: Int,
     val firstName: String,
     val lastName: String,
     val percent: Double,

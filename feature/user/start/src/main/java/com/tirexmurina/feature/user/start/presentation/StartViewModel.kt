@@ -4,15 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tirexmurina.shared.user.core.data.local.SharedPrefsCorruptedException
+import com.tirexmurina.shared.user.core.data.ForbiddenException
+import com.tirexmurina.shared.user.core.data.IdSharedPrefsCorruptedException
+import com.tirexmurina.shared.user.core.data.NetworkFault
+import com.tirexmurina.shared.user.core.data.NotFoundException
+import com.tirexmurina.shared.user.core.data.RequestFault
+import com.tirexmurina.shared.user.core.data.ResponseFault
+import com.tirexmurina.shared.user.core.data.UnauthorizedException
 import com.tirexmurina.shared.user.core.data.models.AuthModel
-import com.tirexmurina.shared.user.core.data.remote.ForbiddenException
-import com.tirexmurina.shared.user.core.data.remote.NetworkFault
-import com.tirexmurina.shared.user.core.data.remote.NotFoundException
-import com.tirexmurina.shared.user.core.data.remote.RequestFault
-import com.tirexmurina.shared.user.core.data.remote.ResponseFault
-import com.tirexmurina.shared.user.core.data.remote.UnauthorizedException
-import com.tirexmurina.shared.user.core.domain.usecase.AskTokenAvailabilityUseCase
+import com.tirexmurina.shared.user.core.domain.usecase.AskSessionAvailabilityUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.LoginUserUseCase
 import com.tirexmurina.shared.user.core.domain.usecase.RegisterUserUseCase
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +23,7 @@ import kotlinx.coroutines.withContext
 class StartViewModel (
     private val loginUserUseCase: LoginUserUseCase,
     private val registerUserUseCase: RegisterUserUseCase,
-    private val askTokenAvailability: AskTokenAvailabilityUseCase,
+    private val askTokenAvailability: AskSessionAvailabilityUseCase,
     private val router: StartRouter
 ) : ViewModel() {
     private val _state = MutableLiveData<StartState>(StartState.Initial)
@@ -39,7 +39,7 @@ class StartViewModel (
                 } else {
                     _state.value = StartState.Content
                 }
-            } catch ( sharedPrefsException : SharedPrefsCorruptedException){
+            } catch (sharedPrefsException: IdSharedPrefsCorruptedException) {
                 handleError(sharedPrefsException)
             }
 
@@ -81,7 +81,8 @@ class StartViewModel (
 
     private fun handleError(exception: Exception) {
         when(exception){
-            is SharedPrefsCorruptedException -> _state.value = StartState.Error.SharedPrefsCorrupted
+            is IdSharedPrefsCorruptedException -> _state.value =
+                StartState.Error.SharedPrefsCorrupted
             is RequestFault -> _state.value = StartState.Error.RequestFault
             is UnauthorizedException -> _state.value = StartState.Error.Unauthorized
             is ForbiddenException -> _state.value = StartState.Error.Forbidden

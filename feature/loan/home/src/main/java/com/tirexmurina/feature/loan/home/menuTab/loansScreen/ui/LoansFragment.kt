@@ -54,7 +54,7 @@ class LoansFragment : BaseFragment<FragmentLoansBinding>() {
     }
 
     private fun handleLoanClick(loan: Loan) {
-        navigationHost?.fromLoansToDetails(loan.id)
+        navigationHost?.fromLoansToDetails(loan.id.toInt())
     }
 
     private fun handleState(state: LoansState) {

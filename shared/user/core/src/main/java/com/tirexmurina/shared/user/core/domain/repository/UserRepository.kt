@@ -8,8 +8,8 @@ interface UserRepository {
 
     suspend fun login(authModel: AuthModel)
 
-    suspend fun tokenAvailable() : Boolean
+    suspend fun sessionAvailable(): Boolean
 
-    suspend fun clearToken()
+    suspend fun clearSession()
 
 }
